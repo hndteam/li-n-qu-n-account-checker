@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên Quân Account Checker</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Full-stack dashboard</p>
+          <h1>Liên Quân Account Checker</h1>
+        </div>
+      </header>
+
+      <main class="card">
+        <form id="checkForm">
+          <div class="grid">
+            <label>
+              Nickname
+              <input type="text" id="nickname" placeholder="VD: SkyBlade" />
+            </label>
+
+            <label>
+              Account ID
+              <input type="text" id="accountId" placeholder="VD: hero-001" />
+            </label>
+
+            <label>
+              Server
+              <input type="text" id="server" placeholder="VD: Hạ Long" />
+            </label>
+
+            <label>
+              Provider
+              <select id="provider">
+                <option value="mock">Mock</option>
+                <option value="public-api">Public API</option>
+                <option value="scraper">Scraper</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit">Kiểm tra</button>
+        </form>
+
+        <div id="status" class="status hidden"></div>
+
+        <section id="result" class="result hidden">
+          <div class="profile-summary">
+            <img id="avatar" alt="avatar" />
+            <div>
+              <h2 id="nicknameDisplay">-</h2>
+              <div class="meta-row">
+                <span id="serverDisplay"></span>
+                <span id="rankDisplay"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <label>Level</label>
+              <strong id="levelDisplay">-</strong>
+            </div>
+            <div class="stat-box">
+              <label>Win rate</label>
+              <strong id="winRateDisplay">-</strong>
+            </div>
+            <div class="stat-box">
+              <label>Matches</label>
+              <strong id="matchesDisplay">-</strong>
+            </div>
+            <div class="stat-box">
+              <label>Status</label>
+              <strong id="statusDisplay">-</strong>
+            </div>
+          </div>
+
+          <pre id="rawOutput"></pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
